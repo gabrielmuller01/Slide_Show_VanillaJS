@@ -70,11 +70,20 @@ body{
     display: flex;
     margin: 10vh auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 21vh;
+    height: 6vh;
+}
+
+.arrow-buttons{
+    width: 6vh;
+    height: 6vh;
+    z-index: 1;
 }
 
 #arrows{
     width: 10%;
+    position: absolute;
 }
 
 

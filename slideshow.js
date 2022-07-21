@@ -1,5 +1,6 @@
 'use strict';
 
+let arrows = document.getElementById('arrows');
 const images = [
 
     {'id': '1', 'url':'./img/img1.jpg'},
@@ -48,12 +49,20 @@ function teclado(e){
     }
 }
 
-document.querySelector('#previous').addEventListener('click', previous);
-document.querySelector('#next').addEventListener('click', next);
-document.addEventListener('keydown', teclaDown);
-document.addEventListener('keyup', teclaUp);
 
-let arrows = document.getElementById('arrows');
+function imgclickL(){
+    previous();
+    arrows.setAttribute('src','./arrow_img/arrowLeft.jpeg');
+}
+
+function imgclickR(){
+    next();
+    arrows.setAttribute('src','./arrow_img/arrowRight.jpeg');
+}
+
+function mouseUp(){
+    arrows.src='./arrow_img/arrows.jpeg'
+}
 
 function teclaDown(e){
     if(e.keyCode==37)
@@ -71,6 +80,20 @@ function teclaUp(){
         arrows.src='./arrow_img/arrows.jpeg'
     }
 }
+
+
+document.querySelector('#previous').addEventListener('click', previous);
+document.querySelector('#next').addEventListener('click', next);
+document.querySelector('#divL').addEventListener('mousedown', imgclickL);
+document.querySelector('#divR').addEventListener('mousedown', imgclickR);
+document.addEventListener('mouseup', mouseUp);
+document.addEventListener('keydown',teclaDown);
+document.addEventListener('keyup', teclaUp);
+
+
+
+
+
 
 
 
